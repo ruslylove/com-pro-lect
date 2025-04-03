@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./com-pro-lect
 
     steps:
       - uses: actions/checkout@v4
@@ -32,8 +29,10 @@ jobs:
         run: npm i -g @antfu/ni
 
       - name: Install dependencies
-        working-directory: ./com-pro-lect
-        run: ni
+      
+        run: |
+           cd com-pro-lect/com-pro-lect
+           ni
 
       - name: Build
         run: nr build --base /com-pro-lect/
