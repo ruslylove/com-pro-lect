@@ -32,7 +32,7 @@ jobs:
         run: ni
 
       - name: Build
-        run: nr build --base /${{github.event.repository.name}}/
+        run: nr build --base /com-pro-lect/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
